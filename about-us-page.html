@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Triple A Consulting</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        /* Header */
+        .top-bar {
+            background: #1e3a8a;
+            color: white;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+        
+        .top-bar-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .contact-info {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .header {
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1e3a8a;
+        }
+        
+        .nav {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav a:hover, .nav a.active {
+            color: #f97316;
+        }
+        
+        /* Page Hero */
+        .page-hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .page-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .page-hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        /* About Section */
+        .about-section {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+        
+        .about-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+        }
+        
+        .about-content h2 {
+            font-size: 36px;
+            color: #1e3a8a;
+            margin-bottom: 20px;
+        }
+        
+        .about-content p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        /* Mission & Vision */
+        .mission-vision {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 80px 0;
+        }
+        
+        .mv-card {
+            background: #f8fafc;
+            padding: 40px;
+            border-radius: 10px;
+            border-left: 4px solid #f97316;
+        }
+        
+        .mv-card h3 {
+            font-size: 28px;
+            color: #1e3a8a;
+            margin-bottom: 20px;
+        }
+        
+        .mv-card p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        /* Core Values */
+        .values-section {
+            background: #f8fafc;
+            padding: 80px 20px;
+            margin: 80px 0;
+        }
+        
+        .values-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .values-content h2 {
+            font-size: 36px;
+            color: #1e3a8a;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        
+        .value-card {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 36px;
+        }
+        
+        .value-card h3 {
+            font-size: 22px;
+            color: #1e3a8a;
+            margin-bottom: 15px;
+        }
+        
+        .value-card p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* Team Section */
+        .team-section {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+        
+        .team-section h2 {
+            font-size: 36px;
+            color: #1e3a8a;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        
+        .team-member {
+            text-align: center;
+        }
+        
+        .team-photo {
+            width: 100%;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+        }
+        
+        .team-member h3 {
+            font-size: 18px;
+            color: #1e3a8a;
+            margin-bottom: 5px;
+        }
+        
+        .team-member p {
+            font-size: 14px;
+            color: #f97316;
+            font-weight: 500;
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            background: #1e3a8a;
+            color: white;
+            padding: 80px 20px;
+        }
+        
+        .stats-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+        
+        .stat-item h3 {
+            font-size: 48px;
+            color: #f97316;
+            margin-bottom: 10px;
+        }
+        
+        .stat-item p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+            padding: 80px 20px;
+            text-align: center;
+            color: white;
+        }
+        
+        .cta-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .btn {
+            padding: 15px 40px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: #f97316;
+        }
+        
+        .btn-primary:hover {
+            background: #f8fafc;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1e3a8a;
+            color: white;
+            padding: 60px 20px 30px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #f97316;
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            font-size: 14px;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .top-bar-content {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .page-hero h1 {
+                font-size: 32px;
+            }
+            
+            .about-grid,
+            .mission-vision,
+            .values-grid,
+            .team-grid,
+            .stats-grid,
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="contact-info">
+                <span>📞 +234-XXX-XXX-XXXX</span>
+                <span>📧 info@tripleaconsulting.com.ng</span>
+            </div>
+            <div class="social-links">
+                <a href="#" style="color: white;">LinkedIn</a>
+                <a href="#" style="color: white;">Twitter</a>
+                <a href="#" style="color: white;">Facebook</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">Triple A Consulting</div>
+            <nav class="nav">
+                <a href="/">Home</a>
+                <a href="/services">Services</a>
+                <a href="/industries">Industries</a>
+                <a href="/about" class="active">About Us</a>
+                <a href="/contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <h1>About Triple A Consulting</h1>
+        <p>Transforming businesses and empowering professionals through innovative IT solutions and world-class training since [Year]</p>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="about-grid">
+            <div class="about-image">
+                [Company Office Photo]
+            </div>
+            <div class="about-content">
+                <h2>Who We Are</h2>
+                <p>Triple A Consulting and Solutions Limited is a leading IT consulting, training, and solutions provider headquartered in Lagos, Nigeria. We specialize in helping organizations across Africa leverage technology to achieve their business objectives.</p>
+                <p>With partnerships with global technology leaders like Microsoft, AWS, Google Cloud, and Odoo, we deliver world-class IT training, cutting-edge solutions, and strategic consulting services to clients across Financial Services, Education, Oil & Gas, and Retail sectors.</p>
+                <p>Our team of certified professionals brings decades of combined experience in IT service management, cybersecurity, cloud engineering, and enterprise solutions implementation.</p>
+            </div>
+        </div>
+
+        <!-- Mission & Vision -->
+        <div class="mission-vision">
+            <div class="mv-card">
+                <h3>Our Mission</h3>
+                <p>To empower businesses and professionals across Africa with the knowledge, skills, and technology solutions needed to thrive in the digital economy. We are committed to delivering excellence in IT education, innovative solutions, and strategic consulting that drives measurable business results.</p>
+            </div>
+            <div class="mv-card">
+                <h3>Our Vision</h3>
+                <p>To be Africa's most trusted partner for IT transformation, recognized for our expertise, integrity, and commitment to client success. We envision a future where every organization in Africa has access to world-class IT capabilities that enable them to compete globally.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="values-section">
+        <div class="values-content">
+            <h2>Our Core Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h3>Excellence</h3>
+                    <p>We are committed to delivering the highest quality in everything we do, from training programs to consulting services.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3>Integrity</h3>
+                    <p>We operate with transparency, honesty, and ethical standards in all our business relationships.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">💡</div>
+                    <h3>Innovation</h3>
+                    <p>We continuously embrace new technologies and methodologies to provide cutting-edge solutions.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">👥</div>
+                    <h3>Partnership</h3>
+                    <p>We build lasting relationships with our clients, treating their success as our own.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🚀</div>
+                    <h3>Growth</h3>
+                    <p>We invest in the continuous development of our team and the advancement of our clients.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🌍</div>
+                    <h3>Impact</h3>
+                    <p>We strive to make a positive difference in the African technology landscape.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>5000+</h3>
+                <p>Students Trained</p>
+            </div>
+            <div class="stat-item">
+                <h3>100+</h3>
+                <p>Corporate Clients</p>
+            </div>
+            <div class="stat-item">
+                <h3>9</h3>
+                <p>Global Partners</p>
+            </div>
+            <div class="stat-item">
+                <h3>15+</h3>
+                <p>Years Experience</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <h2>Our Leadership Team</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="team-photo">👤</div>
+                <h3>CEO Name</h3>
+                <p>Chief Executive Officer</p>
+            </div>
+            <div class="team-member">
+                <div class="team-photo">👤</div>
+                <h3>CTO Name</h3>
+                <p>Chief Technology Officer</p>
+            </div>
+            <div class="team-member">
+                <div class="team-photo">👤</div>
+                <h3>Training Director</h3>
+                <p>Head of Education Services</p>
+            </div>
+            <div class="team-member">
+                <div class="team-photo">👤</div>
+                <h3>Consulting Lead</h3>
+                <p>Head of Consulting Services</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Ready to Transform Your Business?</h2>
+        <p>Let's discuss how we can help you achieve your IT objectives</p>
+        <div class="cta-buttons">
+            <a href="/contact" class="btn btn-primary">Schedule Consultation</a>
+            <a href="/services" class="btn btn-secondary">Explore Our Services</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Triple A Consulting</h3>
+                <p>Leading IT consulting, training, and solutions provider in Nigeria</p>
+                <p style="margin-top: 20px;">📍 Lagos, Nigeria</p>
+                <p>📞 +234-XXX-XXX-XXXX</p>
+                <p>📧 info@tripleaconsulting.com.ng</p>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <a href="#">IT Education</a>
+                <a href="#">IT Solutions</a>
+                <a href="#">IT Consulting</a>
+                <a href="#">Certifications</a>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#">About Us</a>
+                <a href="#">Our Partners</a>
+                <a href="#">Success Stories</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Our Partners</h3>
+                <a href="#">Microsoft</a>
+                <a href="#">AWS</a>
+                <a href="#">Google Cloud</a>
+                <a href="#">View All Partners</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Triple A Consulting and Solutions Limited. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

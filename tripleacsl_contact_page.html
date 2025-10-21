@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Triple A Consulting and Solutions Limited</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1e3a8a;
+        }
+        
+        .logo span {
+            color: #f97316;
+        }
+        
+        .page-hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .page-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .page-hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .contact-section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        
+        .contact-info {
+            background: #f8fafc;
+            padding: 40px;
+            border-radius: 10px;
+        }
+        
+        .contact-info h2 {
+            font-size: 32px;
+            color: #1e3a8a;
+            margin-bottom: 30px;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            gap: 20px;
+        }
+        
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            flex-shrink: 0;
+        }
+        
+        .info-content h3 {
+            font-size: 20px;
+            color: #1e3a8a;
+            margin-bottom: 5px;
+        }
+        
+        .info-content p {
+            color: #64748b;
+            line-height: 1.8;
+        }
+        
+        .info-content a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        
+        .info-content a:hover {
+            text-decoration: underline;
+        }
+        
+        .business-hours {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
+            border-left: 4px solid #10b981;
+        }
+        
+        .business-hours h3 {
+            color: #1e3a8a;
+            margin-bottom: 15px;
+        }
+        
+        .hours-list {
+            list-style: none;
+        }
+        
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: #1e3a8a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            transition: all 0.3s;
+        }
+        
+        .social-link:hover {
+            background: #f97316;
+            transform: translateY(-3px);
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .contact-form h2 {
+            font-size: 32px;
+            color: #1e3a8a;
+            margin-bottom: 30px;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #1e3a8a;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .required {
+            color: #ef4444;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+            color: white;
+            padding: 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(249, 115, 22, 0.3);
+        }
+        
+        .whatsapp-cta {
+            background: linear-gradient(135deg, #25D366 0%, #1DA851 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .whatsapp-cta h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        
+        .whatsapp-cta p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            opacity: 0.95;
+        }
+        
+        .whatsapp-btn {
+            display: inline-block;
+            background: white;
+            color: #25D366;
+            padding: 15px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .map-section {
+            margin-top: 60px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .map-placeholder {
+            background: #e2e8f0;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #64748b;
+        }
+        
+        .footer {
+            background: #1e293b;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 80px;
+        }
+        
+        .footer p {
+            color: #94a3b8;
+        }
+        
+        @media (max-width: 968px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-hero h1 {
+                font-size: 36px;
+            }
+            
+            .contact-form,
+            .contact-info {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">Triple <span>A</span> Consulting</div>
+        </div>
+    </header>
+    
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <h1>Get In Touch With Us</h1>
+        <p>Have a question or ready to start your IT transformation journey? We're here to help.</p>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-grid">
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                
+                <div class="info-item">
+                    <div class="info-icon">📍</div>
+                    <div class="info-content">
+                        <h3>Office Address</h3>
+                        <p>
+                            [Your Office Address]<br>
+                            Lagos, Nigeria<br>
+                            [Postal Code]
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-icon">📞</div>
+                    <div class="info-content">
+                        <h3>Phone Numbers</h3>
+                        <p>
+                            Main: <a href="tel:+234XXXXXXXXXX">+234-XXX-XXX-XXXX</a><br>
+                            WhatsApp: <a href="https://wa.me/234XXXXXXXXX">+234-XXX-XXX-XXXX</a><br>
+                            Support: <a href="tel:+234XXXXXXXXXX">+234-XXX-XXX-XXXX</a>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-icon">📧</div>
+                    <div class="info-content">
+                        <h3>Email Addresses</h3>
+                        <p>
+                            General: <a href="mailto:info@tripleacsl.com">info@tripleacsl.com</a><br>
+                            Training: <a href="mailto:training@tripleacsl.com">training@tripleacsl.com</a><br>
+                            Support: <a href="mailto:support@tripleacsl.com">support@tripleacsl.com</a>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="business-hours">
+                    <h3>⏰ Business Hours</h3>
+                    <ul class="hours-list">
+                        <li><span>Monday - Friday</span><strong>8:00 AM - 6:00 PM</strong></li>
+                        <li><span>Saturday</span><strong>9:00 AM - 2:00 PM</strong></li>
+                        <li><span>Sunday</span><strong>Closed</strong></li>
+                    </ul>
+                    <p style="margin-top: 15px; color: #64748b; font-size: 14px;">
+                        * All times are West Africa Time (WAT)
+                    </p>
+                </div>
+                
+                <div class="info-item" style="margin-top: 30px;">
+                    <div class="info-content">
+                        <h3>Connect With Us</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-link" title="LinkedIn">in</a>
+                            <a href="#" class="social-link" title="Twitter">🐦</a>
+                            <a href="#" class="social-link" title="Facebook">f</a>
+                            <a href="#" class="social-link" title="Instagram">📷</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h2>Send Us a Message</h2>
+                <form>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name <span class="required">*</span></label>
+                            <input type="text" id="firstName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="lastName">Last Name <span class="required">*</span></label>
+                            <input type="text" id="lastName" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number <span class="required">*</span></label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="service">Service Interest <span class="required">*</span></label>
+                            <select id="service" required>
+                                <option value="">-- Select Service --</option>
+                                <option>IT Education & Training</option>
+                                <option>IT Solutions</option>
+                                <option>IT Consulting</option>
+                                <option>Exam Vouchers</option>
+                                <option>General Inquiry</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="industry">Your Industry</label>
+                            <select id="industry">
+                                <option value="">-- Select Industry --</option>
+                                <option>Financial Services</option>
+                                <option>Education</option>
+                                <option>Oil & Gas</option>
+                                <option>Retail</option>
+                                <option>Technology</option>
+                                <option>Healthcare</option>
+                                <option>Government</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Message <span class="required">*</span></label>
+                        <textarea id="message" required placeholder="Tell us how we can help you..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- WhatsApp CTA -->
+        <div class="whatsapp-cta">
+            <h3>💬 Prefer WhatsApp?</h3>
+            <p>Get instant responses to your inquiries via WhatsApp Business</p>
+            <a href="https://wa.me/234XXXXXXXXX?text=Hello%2C%20I%20have%20an%20inquiry" class="whatsapp-btn">
+                Chat With Us on WhatsApp
+            </a>
+        </div>
+        
+        <!-- Map Section -->
+        <div class="map-section">
+            <div class="map-placeholder">
+                📍 Google Maps Integration Here<br>
+                <small style="font-size: 14px; margin-top: 10px; display: block;">
+                    Embed: &lt;iframe src="https://www.google.com/maps/embed?..." width="100%" height="450"&gt;&lt;/iframe&gt;
+                </small>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Triple A Consulting and Solutions Limited. All rights reserved.</p>
+    </footer>
+</body>
+</html>

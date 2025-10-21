@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triple A Consulting - Homepage Wireframe</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .wireframe {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border: 2px solid #333;
+        }
+        
+        .header {
+            background: #e0e0e0;
+            padding: 20px;
+            border-bottom: 2px solid #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-box {
+            width: 200px;
+            height: 60px;
+            background: white;
+            border: 2px dashed #666;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-item {
+            padding: 10px 20px;
+            background: white;
+            border: 2px solid #666;
+        }
+        
+        .hero {
+            background: #d0d0d0;
+            padding: 80px 40px;
+            text-align: center;
+            border-bottom: 2px solid #333;
+        }
+        
+        .hero-title {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .hero-subtitle {
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: #666;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .btn {
+            padding: 15px 40px;
+            background: white;
+            border: 2px solid #333;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: #333;
+            color: white;
+        }
+        
+        .section {
+            padding: 60px 40px;
+            border-bottom: 2px solid #333;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #333;
+        }
+        
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .card {
+            background: #f9f9f9;
+            border: 2px dashed #666;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .card-icon {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border: 2px solid #666;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+        }
+        
+        .card-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .card-text {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .partners {
+            background: #f0f0f0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        
+        .partner-box {
+            background: white;
+            border: 2px dashed #666;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .industries {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        
+        .industry-box {
+            background: #f9f9f9;
+            border: 2px dashed #666;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .stats {
+            background: #e8e8e8;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+        }
+        
+        .stat-box {
+            padding: 40px 20px;
+            text-align: center;
+            border-right: 2px solid #333;
+        }
+        
+        .stat-box:last-child {
+            border-right: none;
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 16px;
+            color: #666;
+        }
+        
+        .cta-section {
+            background: #d8d8d8;
+            padding: 60px 40px;
+            text-align: center;
+        }
+        
+        .footer {
+            background: #333;
+            color: white;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+            padding: 5px 0;
+            border-bottom: 1px solid #555;
+        }
+        
+        .annotation {
+            background: #fffbcc;
+            border: 2px solid #ffeb3b;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 14px;
+            font-style: italic;
+        }
+        
+        @media (max-width: 768px) {
+            .cards, .partners, .industries, .stats, .footer {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wireframe">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo-box">LOGO</div>
+            <div class="nav-menu">
+                <div class="nav-item">Home</div>
+                <div class="nav-item">About</div>
+                <div class="nav-item">Services ▼</div>
+                <div class="nav-item">Industries ▼</div>
+                <div class="nav-item">Partners</div>
+                <div class="nav-item">Contact</div>
+                <div class="nav-item">Training Portal</div>
+            </div>
+        </div>
+        
+        <div class="annotation">
+            📐 WIREFRAME VIEW - Shows structure and layout without visual design
+        </div>
+        
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="hero-title">Transform Your Business Through IT Excellence</div>
+            <div class="hero-subtitle">Nigeria's trusted partner for IT training, solutions, and consulting</div>
+            <div class="button-group">
+                <button class="btn btn-primary">Explore Services</button>
+                <button class="btn">Access Training Portal</button>
+            </div>
+        </div>
+        
+        <!-- Services Section -->
+        <div class="section">
+            <h2 class="section-title">Our Services</h2>
+            <div class="annotation">
+                Three main service categories displayed as cards with icons
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-icon">📚</div>
+                    <h3 class="card-title">IT Education & Training</h3>
+                    <p class="card-text">Physical, virtual, and self-paced courses. ITSM, Cybersecurity, Cloud, Data, DevOps. 100+ exam vouchers.</p>
+                    <button class="btn" style="margin-top: 20px">Learn More →</button>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💻</div>
+                    <h3 class="card-title">IT Solutions</h3>
+                    <p class="card-text">Web development, LMS deployment, OpenSource implementation (ERP, CRM), custom software development.</p>
+                    <button class="btn" style="margin-top: 20px">Learn More →</button>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎯</div>
+                    <h3 class="card-title">IT Consulting</h3>
+                    <p class="card-text">ISO standards, cloud migration, multi-cloud, FinOps, database migration assessment and implementation.</p>
+                    <button class="btn" style="margin-top: 20px">Learn More →</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Partners Section -->
+        <div class="section">
+            <h2 class="section-title">Our Partners</h2>
+            <div class="annotation">
+                9 partner logos displayed in 3x3 grid - actual logos will replace these boxes
+            </div>
+            <div class="partners">
+                <div class="partner-box">Microsoft</div>
+                <div class="partner-box">AWS</div>
+                <div class="partner-box">Google</div>
+                <div class="partner-box">CompTIA</div>
+                <div class="partner-box">PeopleCert</div>
+                <div class="partner-box">Odoo</div>
+                <div class="partner-box">Logical Operations</div>
+                <div class="partner-box">HF Security</div>
+                <div class="partner-box">BeingCerts</div>
+            </div>
+        </div>
+        
+        <!-- Industries Section -->
+        <div class="section">
+            <h2 class="section-title">Industries We Serve</h2>
+            <div class="annotation">
+                Four industry sectors with relevant icons and brief descriptions
+            </div>
+            <div class="industries">
+                <div class="industry-box">
+                    <div class="card-icon">🏦</div>
+                    <h3>Financial Services</h3>
+                    <p style="margin-top: 10px; color: #666;">Banking, FinTech, Insurance</p>
+                </div>
+                <div class="industry-box">
+                    <div class="card-icon">🎓</div>
+                    <h3>Education</h3>
+                    <p style="margin-top: 10px; color: #666;">Schools, Universities, Training Centers</p>
+                </div>
+                <div class="industry-box">
+                    <div class="card-icon">⚡</div>
+                    <h3>Oil & Gas</h3>
+                    <p style="margin-top: 10px; color: #666;">Energy, Petroleum, Infrastructure</p>
+                </div>
+                <div class="industry-box">
+                    <div class="card-icon">🛒</div>
+                    <h3>Retail</h3>
+                    <p style="margin-top: 10px; color: #666;">E-commerce, Stores, Distribution</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Statistics Section -->
+        <div class="section" style="padding: 0; background: #e8e8e8;">
+            <div class="annotation" style="margin: 20px;">
+                Animated counter showing impressive numbers - triggers on scroll
+            </div>
+            <div class="stats">
+                <div class="stat-box">
+                    <div class="stat-number">5000+</div>
+                    <div class="stat-label">Students Trained</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Exam Certifications</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">9</div>
+                    <div class="stat-label">Global Partners</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Corporate Clients</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2 class="section-title">Ready to Transform Your IT Skills?</h2>
+            <div class="annotation">
+                Strong call-to-action with WhatsApp and Contact options
+            </div>
+            <div class="button-group" style="margin-top: 30px;">
+                <button class="btn btn-primary">Contact Us</button>
+                <button class="btn" style="background: #25D366; color: white; border-color: #25D366;">
+                    💬 WhatsApp Us
+                </button>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul class="footer-links">
+                    <li>About Us</li>
+                    <li>Our Team</li>
+                    <li>Careers</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li>IT Education</li>
+                    <li>IT Solutions</li>
+                    <li>IT Consulting</li>
+                    <li>Training Portal</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul class="footer-links">
+                    <li>Blog</li>
+                    <li>Case Studies</li>
+                    <li>Whitepapers</li>
+                    <li>FAQs</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul class="footer-links">
+                    <li>📍 Lagos, Nigeria</li>
+                    <li>📞 +234-XXX-XXX-XXXX</li>
+                    <li>📧 info@tripleacsl.com</li>
+                    <li>💼 LinkedIn | Twitter</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
